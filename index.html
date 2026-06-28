@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Open Day 2026 - Trò chơi câu hỏi thử thách tại hội trường">
+    <title>OPEN DAY 2026 - THỬ THÁCH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Desktop Blocker -->
+    <div class="desktop-blocker">
+        <div class="blocker-content">
+            <i class="ti-mobile blocker-icon"></i>
+            <h2 class="blocker-title">Vui lòng sử dụng<br><span>Điện thoại</span></h2>
+            <p class="blocker-text">Trò chơi này chỉ hỗ trợ trên thiết bị di động.<br>Hãy quét mã QR bằng điện thoại để tham gia!</p>
+            <div class="blocker-phone">
+                <div class="phone-frame">
+                    <div class="phone-screen"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particle background -->
+    <canvas id="particleCanvas"></canvas>
+    <!-- Speed lines overlay -->
+    <div class="speed-lines"></div>
+
+    <!-- SCREEN 1: Swipe Up Screen -->
+    <div id="swipeScreen" class="screen active">
+        <!-- Decorative light rays -->
+        <div class="light-rays">
+            <div class="ray ray-1"></div>
+            <div class="ray ray-2"></div>
+            <div class="ray ray-3"></div>
+        </div>
+        <div class="lens-flare"></div>
+
+        <div class="logos-container">
+            <img src="img/Logo_PTIT_University.png" alt="PTIT Logo" class="logo">
+            <div class="logo-divider"></div>
+            <img src="img/Logo-Rikkei.png" alt="Rikkei Logo" class="logo">
+        </div>
+
+        <div class="event-tag">
+            <span class="tag-label">OPEN DAY</span>
+            <span class="tag-year">2026</span>
+        </div>
+
+        <div class="swipe-content">
+            <div class="challenge-label">
+                <span class="label-line"></span>
+                <span>Săn Kho Báu QR <br> THỬ THÁCH TRI THỨC</span>
+                <span class="label-line"></span>
+            </div>
+            <h1 class="main-title">
+                <span class="title-line">HÃY VUỐT LÊN</span>
+                <span class="title-line highlight">ĐỂ NHẬN CÂU HỎI</span>
+            </h1>
+            <p class="subtitle">Làm chủ tương lai — Dẫn đầu thế hệ</p>
+        </div>
+
+        <div class="swipe-indicator">
+            <div class="swipe-arrow-container">
+                <div class="swipe-arrow"></div>
+                <div class="swipe-arrow"></div>
+                <div class="swipe-arrow"></div>
+            </div>
+            <div class="swipe-line"></div>
+            <span class="swipe-text">VUỐT LÊN</span>
+        </div>
+
+        <div class="pulse-ring"></div>
+    </div>
+
+    <!-- SCREEN 2: Loading / Transition -->
+    <div id="loadingScreen" class="screen">
+        <div class="loading-content">
+            <div class="compass-loader">
+                <div class="compass-ring"></div>
+                <div class="compass-needle"></div>
+                <div class="compass-dot"></div>
+            </div>
+            <p class="loading-text">ĐANG CHỌN CÂU HỎI<span class="dots"></span></p>
+            <div class="loading-bar">
+                <div class="loading-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCREEN 3: Question Screen -->
+    <div id="questionScreen" class="screen">
+        <div class="light-rays light-rays-q">
+            <div class="ray ray-1"></div>
+            <div class="ray ray-2"></div>
+        </div>
+
+        <div class="question-logos">
+            <img src="img/Logo_PTIT_University.png" alt="PTIT" class="logo-sm">
+            <img src="img/Logo-Rikkei.png" alt="Rikkei" class="logo-sm">
+        </div>
+
+        <div class="question-container">
+            <div class="question-header">
+                <div class="topic-badge" id="topicBadge">
+                    <i class="topic-icon ti-book"></i>
+                    <span class="topic-label">Chủ đề:</span>
+                    <span class="topic-name" id="topicName">CHỦ ĐỀ</span>
+                </div>
+                <div class="question-number" id="questionNumber">Q.01</div>
+            </div>
+
+            <div class="question-card">
+                <div class="card-border-glow"></div>
+                <div class="question-mark">?</div>
+                <p class="question-text" id="questionText">Câu hỏi sẽ hiển thị ở đây</p>
+            </div>
+
+            <div class="note-card">
+                <i class="note-icon ti-location-pin"></i>
+                <p class="note-text">
+                    Hãy đến <strong>quầy gian trò chơi</strong> ở ngoài hội trường để đưa ra câu trả lời <strong>nhanh nhất</strong> có thể!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
