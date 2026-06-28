@@ -2,6 +2,36 @@
    OPEN DAY 2026 - Game Logic
    ============================================ */
 
+// ---- SECURITY: BLOCK DEVTOOLS ON PRODUCTION ----
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+if (!isLocalhost) {
+    // Block right-click context menu
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Block common DevTools shortcuts
+    document.addEventListener('keydown', e => {
+        // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+        if (
+            e.keyCode === 123 ||
+            (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+            (e.ctrlKey && e.keyCode === 85)
+        ) {
+            e.preventDefault();
+        }
+    });
+
+    // Optional: Anti-debugger trap (slows down DevTools if forced open)
+    setInterval(() => {
+        const before = new Date().getTime();
+        debugger;
+        const after = new Date().getTime();
+        if (after - before > 100) {
+            // They have DevTools open and hit the debugger
+            document.body.innerHTML = '<h1 style="color:white; text-align:center; padding-top:20vh; font-family:sans-serif;">DevTools is not allowed here.</h1>';
+        }
+    }, 1000);
+}
+
 // ---- QUESTION DATA ----
 const QUESTIONS_DB = [
     {
